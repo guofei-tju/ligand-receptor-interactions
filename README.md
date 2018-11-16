@@ -7,16 +7,26 @@ cvx (matlab)
 
 Input:
 
-.mat
+SMR_DCT_feature.mat
 
-.mat
+SMR_HOG.mat
 
-.mat
+CT_686.mat
 
-.mat
+LD_1260.mat
 
-.mat
+MCD_1764.mat
+
+N_Hylori_DCT.mat
+
+P_Hylori_DCT.mat
+
+N_Yeast_DCT.mat
+
+P_Yeast_DCT.mat
+
+we use an integrated computational method 
 
 Output:
 
-A novel Adjacency_Metrix
+Various classification indicators
