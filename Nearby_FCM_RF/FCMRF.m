@@ -37,7 +37,7 @@ function [Predict_label_f,Predict_score_f,SMR_test_label]=FCMRF(data,P_L_test_fe
    end
      SMR_test_feature=[P_L_test_feature;N_L_test_feature];
      SMR_test_label=[P_L_test_label;N_L_test_label];
-     %collect classifiers£»
+     %collect classifiersÂ£Â»
      N2=size(SMR_test_feature,1);
   for i=1:N2
      X=SMR_test_feature(i,:);
