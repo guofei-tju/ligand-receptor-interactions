@@ -1,23 +1,23 @@
 function [U, V,objFcn] = myfcm(data, k, T, m, epsm)
 % fuzzy c-means algorithm
-% ÊäÈë£º data£º ´ý¾ÛÀàÊý¾Ý£¬nÐÐsÁÐ£¬nÎªÊý¾Ý¸öÊý£¬sÎªÃ¿¸öÊý¾ÝµÄÌØÕ÷Êý
-%??????? c? £º? ¾ÛÀàÖÐÐÄ¸öÊý
-%??????? m? :?? Ä£ºýÏµÊý
-% Êä³ö£º U? :?? Á¥Êô¶È¾ØÕó£¬cÐÐnÁÐ£¬ÔªËØuij±íÊ¾µÚj¸öÊý¾ÝÁ¥ÊôÓÚµÚiÀàµÄ³Ì¶È
-%??????? V? £º? ¾ÛÀàÖÐÐÄÏòÁ¿£¬cÐÐsÁÐ£¬ÓÐc¸öÖÐÐÄ£¬Ã¿¸öÖÐÐÄÓÐsÎ¬ÌØÕ÷
+% è¾“å…¥ï¼š dataï¼š å¾…èšç±»æ•°æ®ï¼Œnè¡Œsåˆ—ï¼Œnä¸ºæ•°æ®ä¸ªæ•°ï¼Œsä¸ºæ¯ä¸ªæ•°æ®çš„ç‰¹å¾æ•°
+%??????? c? ï¼š? èšç±»ä¸­å¿ƒä¸ªæ•°
+%??????? m? :?? æ¨¡ç³Šç³»æ•°
+% è¾“å‡ºï¼š U? :?? éš¶å±žåº¦çŸ©é˜µï¼Œcè¡Œnåˆ—ï¼Œå…ƒç´ uijè¡¨ç¤ºç¬¬jä¸ªæ•°æ®éš¶å±žäºŽç¬¬iç±»çš„ç¨‹åº¦
+%??????? V? ï¼š? èšç±»ä¸­å¿ƒå‘é‡ï¼Œcè¡Œsåˆ—ï¼Œæœ‰cä¸ªä¸­å¿ƒï¼Œæ¯ä¸ªä¸­å¿ƒæœ‰sç»´ç‰¹å¾
  
 if nargin < 3
- T = 10;%Ä¬ÈÏµü´ú´ÎÊýÎª100
+ T = 10;%é»˜è®¤è¿­ä»£æ¬¡æ•°ä¸º100
 end
 if nargin < 5
- epsm = 1.0e-6; %Ä¬ÈÏÊÕÁ²¾«¶È
+ epsm = 1.0e-6; %é»˜è®¤æ”¶æ•›ç²¾åº¦
 end
 if nargin < 4
- m = 2; %Ä¬ÈÏÄ£ºýÏµÊýÖµÎª2
+ m = 2; %é»˜è®¤æ¨¡ç³Šç³»æ•°å€¼ä¸º2
 end
  
 [n, s] = size(data); 
-% ³õÊ¼»¯Á¥Êô¶È¾ØÕóU(0),²¢¹éÒ»»¯
+% åˆå§‹åŒ–éš¶å±žåº¦çŸ©é˜µU(0),å¹¶å½’ä¸€åŒ–
 U0 = rand(k, n);
 temp = sum(U0,1);
 for i=1:n
@@ -29,10 +29,10 @@ V(k,s) = 0; U(k,n) = 0; distance(k,n) = 0;
 while( iter<T )
  iter = iter + 1;
 %??? U =? U0;
- % ¸üÐÂV(t)
+ % æ›´æ–°V(t)
  Um = U0.^m;
  V = Um*data./(sum(Um,2)*ones(1,s)); %
- % ¸üÐÂU(t)
+ % æ›´æ–°U(t)
  for i = 1:k
  for j = 1:n
 distance(i,j) = mydist(data(j,:),V(i,:));
@@ -40,7 +40,7 @@ distance(i,j) = mydist(data(j,:),V(i,:));
  end
  U=1./(distance.^m.*(ones(k,1)*sum(distance.^(-m)))); 
  objFcn(iter) = sum(sum(Um.*distance.^2));
- % FCMËã·¨Í£Ö¹Ìõ¼þ
+ % FCMç®—æ³•åœæ­¢æ¡ä»¶
  if norm(U-U0,Inf)<epsm 
  break
 end 
