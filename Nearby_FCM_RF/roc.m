@@ -7,17 +7,17 @@ TrueNegative = 0;
 FalsePositive = 0;
 FalseNegative = 0;
 for k=1:l
-    if test_data_label(k)==1 & predict_label(k)==1  %ÕæÑôĞÔ
+    if test_data_label(k)==1 & predict_label(k)==1  %çœŸé˜³æ€§
         TruePositive = TruePositive +1;
     end
-    if test_data_label(k)==-1 & predict_label(k)==-1 %ÕæÒõĞÔ
+    if test_data_label(k)==-1 & predict_label(k)==-1 %çœŸé˜´æ€§
         TrueNegative = TrueNegative +1;
     end 
-    if test_data_label(k)==-1 & predict_label(k)==1  %¼ÙÑôĞÔ
+    if test_data_label(k)==-1 & predict_label(k)==1  %å‡é˜³æ€§
         FalsePositive = FalsePositive +1;
     end
 
-    if test_data_label(k)==1 & predict_label(k)==-1  %¼ÙÒõĞÔ
+    if test_data_label(k)==1 & predict_label(k)==-1  %å‡é˜´æ€§
         FalseNegative = FalseNegative +1;
     end
 end
