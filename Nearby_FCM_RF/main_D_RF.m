@@ -18,7 +18,7 @@ P_L_test_feature=rand_P_L_feature(1:94,:);
 P_L_test_label=ones(94,1);
 P_L_train_feature=rand_P_L_feature(95:end,:);
 P_L_train_label=ones(376,1);
-%Ö÷º¯Êı
+%Ã–Ã·ÂºÂ¯ÃŠÃ½
 [Predict_label_f,Predict_score_f,SMR_test_label]=FCMRF(data,P_L_test_feature,P_L_test_label,P_L_train_feature,P_L_train_label,k,nTree);
 
     
@@ -73,7 +73,7 @@ Jb1=objFcn1(end)
    end
      SMR_test_feature=[P_L_test_feature;N_L_test_feature];
      SMR_test_label=[P_L_test_label;N_L_test_label];
-     %collect classifiers£»
+     %collect classifiersÂ£Â»
      N2=size(SMR_test_feature,1);
   for i=1:N2
      X=SMR_test_feature(i,:);
