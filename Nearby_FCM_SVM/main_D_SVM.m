@@ -1,7 +1,7 @@
 cclc
 clear
 load AC_360
-%²ÎÊıÉèÖÃ
+%Â²ÃÃŠÃ½Ã‰Ã¨Ã–Ãƒ
 k=20;Num_share=51;
 CG_parameter = '-c 4 -g 0.5 -b 1';
 % negative data
@@ -53,7 +53,7 @@ Jb1=objFcn1(end)
    end
      SMR_test_feature=[P_L_test_feature;N_L_test_feature];
      SMR_test_label=[P_L_test_label;N_L_test_label];
-     %collect classifiers£»
+     %collect classifiersÂ£Â»
      N2=size(SMR_test_feature,1);
   for i=1:N2
      X=SMR_test_feature(i,:);
