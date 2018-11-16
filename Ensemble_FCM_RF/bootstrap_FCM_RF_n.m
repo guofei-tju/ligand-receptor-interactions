@@ -23,7 +23,7 @@ N_L_test_label=[];
       eval(['N_L_test_feature',num2str(i),'=','N_L_test_feature',';']);
       eval(['N_L_test_label',num2str(i),'=','N_L_test_label',';']);
   end
-  %ºÏ³É²âÊÔ¼¯²¢Í³¼Æ²âÊÔ¼¯¸öÊı
+  %åˆæˆæµ‹è¯•é›†å¹¶ç»Ÿè®¡æµ‹è¯•é›†ä¸ªæ•°
        N_L_test_feature=[];
        N_L_test_label=[];
    for i=1:k
@@ -34,7 +34,7 @@ N_L_test_label=[];
      SMR_test_label=[P_L_test_label;N_L_test_label];
      Num_test=size(SMR_test_feature,1);
      
-%Æ½¾ù·Ö¸ºÀàÑù±¾Êı¾İ¼¯     
+%å¹³å‡åˆ†è´Ÿç±»æ ·æœ¬æ•°æ®é›†     
      Num_feature=[];
      step=[];
 for i=1:k
@@ -49,7 +49,7 @@ for i=1:k
             eval(['N_L_sub_train_label' num2str(i) '' num2str(Num_share) '=-1*ones(Num_sub_train_feature' num2str(i) '' num2str(Num_share) ',1);']);           
    end
  end
-%ºÏ²¢¸ºÑù±¾Êı¾İ¼¯ÓëÕıÑù±¾Êı¾İ¼¯¹¹³ÉĞÂµÄÑµÁ·¼¯
+%åˆå¹¶è´Ÿæ ·æœ¬æ•°æ®é›†ä¸æ­£æ ·æœ¬æ•°æ®é›†æ„æˆæ–°çš„è®­ç»ƒé›†
 for j=1:Num_share
 eval(['N_L_sub_train_feature' num2str(j) '=[];']);
 eval(['N_L_sub_train_label' num2str(j) '=[];']);
@@ -62,7 +62,7 @@ eval(['SMR_train_label' num2str(j) '=[];']);
     eval(['SMR_train_label' num2str(j) ' =[P_L_train_label;N_L_sub_train_label' num2str(j) '];']);
   end
 end
-%ÑµÁ·Ä£ĞÍºÍÊä³ölabel
+%è®­ç»ƒæ¨¡å‹å’Œè¾“å‡ºlabel
 for j=1:Num_share
     eval(['model' num2str(j) ' = [];']);
     eval(['model' num2str(j) '=TreeBagger(nTree,SMR_train_feature' num2str(j) ',SMR_train_label' num2str(j) ');']);
